@@ -7,7 +7,7 @@
       "div": "\n      \n      <p>Henry Levin the 7th</p>\n    \n    </div>"
     }
   ],
-  "identifier": [
+  "identifier": 
     {
       "use": "usual",
       "type": {
@@ -38,6 +38,5 @@
         "High blood pressure",
         "Asthma"
       ]
-    }
-  ]
 }
+
