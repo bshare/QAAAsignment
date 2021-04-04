@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Question 4</title>
+  </head>
+
+  <body>
+    <div id="patientName"></div>
+    <div id="organization"></div>
+    <div id="gender"></div>
+    <div id="numConditions"></div>
+    <ul></ul>
+
+    <script>
+      var myList = document.querySelector("ul");
+
+      fetch("./patients.json")
+        .then((response) => response.json())
+        .then((data) => {
+          document.querySelector("#patientName").innerText =
+            "Name of Patient: " + data.name.given + " " + data.name.family;
+          document.querySelector("#organization").innerText =
+            "Organization name: " + data.managingOrganization.display;
+          document.querySelector("#gender").innerText =
+            "Gender: " + data.gender;
+          document.querySelector("#numConditions").innerText =
+            "Number of Conditions: " + data.conditions.length;
+          for (var i = 0; i < data.conditions.length; i++) {
+            var listItem = document.createElement("li");
+            listItem.innerHTML = data.conditions[i];
+            myList.appendChild(listItem);
+          }
+        });
+    </script>
+  </body>
+</html>
